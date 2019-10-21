@@ -56,5 +56,5 @@ fun Collection<Area>.contains(coordinate: Coordinate) =
 /**
  * Turns a range of x values and y values into a list of coordinates
  */
-fun expandCoordinates(xRange: IntRange, yRange: IntRange) =
+private fun expandCoordinates(xRange: IntRange, yRange: IntRange) =
     xRange.flatMap { x -> yRange.map { y -> Coordinate(x, y) } }

@@ -15,7 +15,8 @@ class Analyzer(maxWidth: Int, maxHeight: Int, barrenFields: Set<Field>) {
         .toSet()
 
     // The set of all fertile coordinates
-    private val fertileLand = expandCoordinates((0 until maxWidth), (0 until maxHeight))
+    private val fertileLand = searchableBounds
+        .allCoordinates
         .filter { !barrenLand.contains(it) }
         .toSet()
 
